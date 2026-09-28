@@ -59,7 +59,7 @@ However, *this* query looks like it does the same thing, but will crash at runti
 @Query(filter: #Predicate<Movie> { $0.cast.isEmpty == false }, sort: \Movie.name) private var movies: [Movie]
 ```
 
-Never attempt to create query predicates that use computed properties, `@Transient` properties, or use custom `Codable` struct data. They might compile cleanly, but they will crash at runtime.
+Never attempt to create query predicates that use computed properties, `@Transient` properties, or use custom `Codable` struct data. They might compile cleanly, but they will crash at runtime. This is also true of the iOS 27 `@Attribute(.codable)` option, and for the same reason: what is stored is an encoded blob that the store cannot look inside.
 
 All predicates must rely on data that is actually stored in the database as `@Model` classes.
 

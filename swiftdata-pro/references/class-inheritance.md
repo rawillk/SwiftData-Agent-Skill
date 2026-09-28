@@ -6,6 +6,8 @@ When supporting iOS 26 and other coordinated releases (macOS 26, etc), SwiftData
 
 This works the same as regular class inheritance in Swift, however, child classes must be explicitly marked `@available` for a 26 release or later, e.g. iOS 26. This is required even if iOS 26 is set as the minimum deployment target.
 
+With the Swift 6.4 toolchain, a multi-platform project can write this once as `@available(anyAppleOS 26, *)` rather than listing iOS, macOS, watchOS, tvOS and visionOS separately — the aligned version numbers start at 26.0, which is exactly the floor this feature needs anyway.
+
 For example:
 
 ```swift

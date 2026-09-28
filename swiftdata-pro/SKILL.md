@@ -16,13 +16,14 @@ Review process:
 1. If the project uses CloudKit, check for CloudKit-specific constraints using `references/cloudkit.md`.
 1. If the project targets iOS 18+, check for indexing opportunities using `references/indexing.md`.
 1. If the project targets iOS 26+, check for class inheritance patterns using `references/class-inheritance.md`.
+1. If the project targets iOS 27+, check the query and observation APIs using `references/observers.md`.
 
 If doing partial work, load only the relevant reference files.
 
 
 ## Core Instructions
 
-- Target Swift 6.2 or later, using modern Swift concurrency.
+- Target Swift 6.4 (Xcode 27) where the toolchain allows, and Swift 6.2 approachable concurrency as a floor. iOS 27 and the aligned 27 releases are current; rules written for iOS 26 hold on 27 too.
 - The user strongly prefers to use SwiftData across the board. Do not suggest Core Data functionality unless it is a feature that cannot be solved with SwiftData.
 - Do not introduce third-party frameworks without asking first.
 - Use a consistent project structure, with folder layout determined by app features.
@@ -100,3 +101,4 @@ End of example.
 - `references/cloudkit.md` - CloudKit-specific constraints including uniqueness, optionality, and eventual consistency.
 - `references/indexing.md` - database indexing for iOS 18+, including single and compound property indexes.
 - `references/class-inheritance.md` - model subclassing for iOS 26+, including @available requirements, schema setup, and predicate filtering.
+- `references/observers.md` - sectioned queries, `ResultsObserver` and `HistoryObserver` for iOS 27+, and observing a store outside SwiftUI.
